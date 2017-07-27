@@ -17,7 +17,7 @@
             %li= link_to "New Recipe", new_recipe_path
             %li.dropdown
               %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                Profile
+                = current_user.full_name
                 %span.caret
               %ul.dropdown-menu
                 %li= link_to "Edit Profile", edit_user_registration_path
