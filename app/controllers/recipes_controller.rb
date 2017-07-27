@@ -12,7 +12,12 @@ class RecipesController < ApplicationController
   end
 
   def index
-		@recipes = Recipe.page(1).per(12).order("created_at DESC")
+    if params[:category].blank?
+      @recipes = Recipe.page(1).per(12).order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @recipes = Recipe.where(category_id: @category_id).order("created_at DESC")
+    end
 	end
 
 	def show

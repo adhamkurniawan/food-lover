@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727134228) do
+ActiveRecord::Schema.define(version: 20170727140356) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20170727134228) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.string "slug"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_recipes_on_category_id"
     t.index ["slug"], name: "index_recipes_on_slug", unique: true
   end
 

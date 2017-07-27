@@ -1,5 +1,6 @@
 ActiveAdmin.register User do
   permit_params :first_name, :last_name, :email, :password
+  config.sort_order = 'name_desc'
 
   index do
     id_column
@@ -24,5 +25,6 @@ ActiveAdmin.register User do
       f.input :email
       f.input :password
     end
+    f.actions
   end
 end
