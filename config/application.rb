@@ -14,5 +14,6 @@ module RecipeBox
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    Searchkick.client = Elasticsearch::Client.new(hosts: ["localhost:9200"], retry_on_failure: true, transport_options: {request: {timeout: 250}})
   end
 end

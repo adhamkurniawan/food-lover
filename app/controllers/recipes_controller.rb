@@ -2,6 +2,14 @@ class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, except: [:index, :show]
 
+  def search
+    if params[:search].present?
+      @recipes = Recipe.search fields: [:title]
+    else
+      @recipes = Recipe.reindex
+    end
+  end
+
   def index
     @recipes = Recipe.paginate(:page => params[:page], :per_page => 15).order("created_at DESC")
   end

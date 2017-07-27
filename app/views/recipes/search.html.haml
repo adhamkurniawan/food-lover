@@ -1,0 +1,20 @@
+- @recipes.each_slice(3) do |recipes|
+  .row
+    - recipes.each do |recipe|
+      .col-md-4
+        .recipe
+          .image_wrapper
+            = link_to recipe do
+              = image_tag recipe.image.url(:medium)
+          %h2= link_to recipe.title, recipe
+          .container
+            = link_to like_recipe_path(recipe), method: :put, class: "btn btn-default btn-sm" do
+              %span.glyphicon.glyphicon-chevron-up
+              Like
+              = recipe.get_upvotes.size
+            = link_to dislike_recipe_path(recipe), method: :put, class: "btn btn-default btn-sm" do
+              %span.glyphicon.glyphicon-chevron-down
+              Dislike
+              = recipe.get_downvotes.size
+          %br/
+.text-center= will_paginate @recipes

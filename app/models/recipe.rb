@@ -2,6 +2,7 @@ class Recipe < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
   acts_as_votable
+  searchkick
 
   belongs_to :user
   has_many :ingredients
