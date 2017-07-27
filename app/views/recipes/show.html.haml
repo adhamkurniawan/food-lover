@@ -8,7 +8,7 @@
 				%p.description= @recipe.description
 				%p
 					Submitted by
-					= @recipe.user.email
+					= @recipe.user.full_name
 
 	.row
 		.col-md-6
@@ -31,3 +31,16 @@
 			- if @recipe.user == user_signed_in?
 				= link_to "Edit", edit_recipe_path, class: "btn btn-default"
 				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+
+%script#dsq-count-scr{:async => "", :src => "https://food-lover.disqus.com/count.js"}
+#disqus_thread
+	:javascript
+		(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://food-lover.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+%noscript
+	Please enable JavaScript to view the
+	%a{:href => "https://disqus.com/?ref_noscript"} comments powered by Disqus.
