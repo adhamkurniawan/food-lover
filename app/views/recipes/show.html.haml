@@ -9,6 +9,14 @@
         %p
           Submitted by
           = @recipe.user.email
+        = link_to like_recipe_path(@recipe), method: :put, class: "btn btn-default btn-sm" do
+          %span.glyphicon.glyphicon-chevron-up
+          Like
+          = @recipe.get_upvotes.size
+        = link_to dislike_recipe_path(@recipe), method: :put, class: "btn btn-default btn-sm" do
+          %span.glyphicon.glyphicon-chevron-down
+          Dislike
+          = @recipe.get_downvotes.size
   .row
     .col-md-6
       #ingredients
