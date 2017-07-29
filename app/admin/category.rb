@@ -4,6 +4,7 @@ ActiveAdmin.register Category do
   index do
     id_column
     column :name
+    actions
   end
 
   show do
