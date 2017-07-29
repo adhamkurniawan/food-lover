@@ -2,11 +2,12 @@ class Recipe < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
   acts_as_votable
-  searchkick
+  #searchkick
 
   belongs_to :user
   has_many :ingredients
   has_many :directions
+  belongs_to :category
 
   accepts_nested_attributes_for :ingredients, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :directions, reject_if: :all_blank, allow_destroy: true
