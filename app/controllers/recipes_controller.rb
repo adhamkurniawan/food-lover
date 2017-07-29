@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
 		@recipe = current_user.recipes.build(recipe_params)
 
 		if @recipe.save
-			redirect_to @recipe, notice: "Successfully created new recipe"
+			redirect_to my_recipes_path, notice: "Successfully created new recipe"
 		else
 			render 'new'
 		end
@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
 
 	def update
 		if @recipe.update(recipe_params)
-			redirect_to @recipe
+			redirect_to my_recipes_path
 		else
 			render 'edit'
 		end
