@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :recipes
-  belongs_to :admin_user
 
   validates :first_name, :last_name, :email, presence: true
 
