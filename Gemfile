@@ -24,6 +24,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'kaminari'
 gem 'searchkick'
 gem 'activeadmin', github: 'activeadmin'
+gem 'cloudinary'
+gem 'paperclip-cloudinary'
 
 group :development, :test do
   gem 'sqlite3'

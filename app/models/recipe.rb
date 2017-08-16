@@ -2,7 +2,7 @@ class Recipe < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
   acts_as_votable
-  #searchkick
+  searchkick
 
   belongs_to :user
   has_many :ingredients
@@ -13,6 +13,6 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :directions, reject_if: :all_blank, allow_destroy: true
 
   validates :title, :description, :image, presence: true
-  has_attached_file :image, styles: { medium: "400x400#", thumb: "100x100>" }
+  has_attached_file :image, styles: { medium: "400x400#", thumb: "100x100>" }, :storage => :cloudinary, :path => ":filename"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end

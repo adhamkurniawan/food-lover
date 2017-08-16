@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: kurokotetsuya
+  api_key: '377267686281871'
+  api_secret: Yirw-1RvKz_HewCEos_lZ8J4T5A
+  enhance_image_tag: true
+  static_image_support: true
+production:
+  cloud_name: kurokotetsuya
+  api_key: '377267686281871'
+  api_secret: Yirw-1RvKz_HewCEos_lZ8J4T5A
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: kurokotetsuya
+  api_key: '377267686281871'
+  api_secret: Yirw-1RvKz_HewCEos_lZ8J4T5A
+  enhance_image_tag: true
+  static_image_support: false

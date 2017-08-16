@@ -48,13 +48,13 @@ class RecipesController < ApplicationController
 		redirect_to root_path, notice: "Successfully deleted recipe"
 	end
 
-  #def search
-  #  if params[:search].present?
-  #    @recipes = Recipe.search(params[:search])
-  #  else
-  #    @recipes = Recipe.all
-  #  end
-  #end
+  def search
+    if params[:search].present?
+      @recipes = Recipe.search(params[:search])
+    else
+      @recipes = Recipe.all
+    end
+  end
 
   def upvote
     @recipe.upvote_by current_user
@@ -75,6 +75,10 @@ class RecipesController < ApplicationController
   	def recipe_params
   		params.require(:recipe).permit(:title, :description, :image, :category_id, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy])
   	end
+
+    #def image_params
+    #  params.require(:recipe).permit(:image)
+    #end
 
   	def find_recipe
   		@recipe = Recipe.friendly.find(params[:id])
