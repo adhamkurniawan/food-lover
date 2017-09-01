@@ -1,26 +1,19 @@
-# Food Lover
+# Food Lover Application
 
-# README
+Short Description:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Food Lover is to helping people share their recipe food to another.
 
-Things you may want to cover:
+Features:
 
-* Ruby version
+* User can view recipe without Authentication
+* User Authentication
+* API Cloudinary Image Storage
+* Searching food with Searchkick and ElasticSearch
+* Filtering by category
+* Admin Panel using ActiveAdmin
 
-* System dependencies
+Admin User: admin@admin.com
+Password: password
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Before using "search" feature make sure you have installed ElasticSearch run on your local machine and uncomment form search in app-user.html.haml section navbar also in model recipe.rb "searchkick". Login as admin to create category for user.
